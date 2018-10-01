@@ -7,5 +7,8 @@ This is a encapsulation where it is possible to train different kind of neural n
 - `Trainer` object which you have to implement extending the provided abstract class
 
 # To do
-- [ ] Create Pipeline class
+- [x] Create Pipeline class
+	- [ ] Add functionality so that it can load a parameter JSON file to load all the required modules
+	- [ ] Can take command line argument of the file name to load the parameters
+	- [ ] Can generate a skeleton parameter file
 - [ ] Create sample code
