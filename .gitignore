@@ -1,2 +1,5 @@
 *.swp
+*.tar.gz
+*.mdl
+101_ObjectCategories
 __pycache__
