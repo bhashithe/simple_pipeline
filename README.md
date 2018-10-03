@@ -57,3 +57,5 @@ Even though the parameter and trainer files are python files, you are supposed t
 	- [x] Can take command line argument of the file name to load the parameters
 	- [ ] Can generate a skeleton parameter file
 - [x] Create sample code
+- [ ] Pause and Continue training
+- [ ] Give a list of parameter files to select best model out of them
