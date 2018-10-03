@@ -49,7 +49,13 @@ Now this script can be invoked with our pipeline to encapsulate training.
 python Pipeline.py parameters trainer
 ```
 
-Even though the parameter and trainer files are python files, you are supposed to omit the file name.
+Even though the parameter and trainer files are python files, you are supposed to omit the file name. Here `Caltech101` dataset has been used as an example, I have implemented a CNN classifier (`CaltechClassifier`) and the training logic (`CaltechTrainer`) which we are going to train the model on. Therefore my pipeline call would look like this,
+
+``` bash
+python Pipeline.py parameters CaltechTrainer
+```
+
+Notice here that I have not changed the parameter files name
 
 # To do
 - [x] Create Pipeline class
