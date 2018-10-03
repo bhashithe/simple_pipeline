@@ -9,6 +9,7 @@ This is a encapsulation where it is possible to train different kind of neural n
 # To do
 - [x] Create Pipeline class
 	- [ ] Add functionality so that it can load a parameter JSON file to load all the required modules
+		- [ ] Instead, creating another python class could solve the object problem
 	- [ ] Can take command line argument of the file name to load the parameters
 	- [ ] Can generate a skeleton parameter file
 - [ ] Create sample code
