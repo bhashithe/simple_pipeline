@@ -1,7 +1,8 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 class Trainer(ABC):
-	def __init__(self, model, loader, optimizer, loss_function, scheduler, device):
+	#def __init__(self, model, loader, optimizer, loss_function, scheduler, device, epochs):
+	def __init__(self, *args, **kwargs):
 		""" Instantiate a Trainer object
 		Args:
 			model: This is a torch.nn.Module implemented object
@@ -19,12 +20,13 @@ class Trainer(ABC):
 		self.loss_funtion = loss_function
 		self.scheduler = scheduler
 		self.device = device
+		self.epochs = epochs
 
 	@abstractmethod
-	def train(self, epochs):
+	def train(self):
 		""" Should train and validate the model in the given number of epochs
 		Args:
-			epochs: the number of epochs the network should train
+			*DEPRECATED* epochs: the number of epochs the network should train
 		
 		Returns:
 			torch.nn.Module type object which the trains instantiated with
