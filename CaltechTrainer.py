@@ -19,6 +19,7 @@ class CaltechTrainer(Trainer):
 		if params.get('device') == torch.device('cuda:0'):
 			print('model in gpu')
 			self.model.cuda()
+			self.model = torch.nn.DataParallel(self.model)
 
 	def train(self):
 		"""
@@ -38,7 +39,7 @@ class CaltechTrainer(Trainer):
 					self.model.train()
 					self.scheduler.step()
 				else:
-					model.eval()
+					self.model.eval()
 		
 				running_loss = 0.0
 				running_corrects = 0

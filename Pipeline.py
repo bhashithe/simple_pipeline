@@ -25,7 +25,7 @@ class Pipeline():
 		Arguments:
 			filename: path and the name of the file, extention should be .py
 		"""
-		print(filename)
+		pass
 
 def main():
 	p = Pipeline()
