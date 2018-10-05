@@ -34,7 +34,7 @@ class CaltechTrainer(Trainer):
 			print('Epoch : {}/{}'.format(epoch, self.epochs-1))
 			print('-'*10)
 
-			for phase in ["train","eval"]:
+			for phase in ["train","val"]:
 				if phase=="train":
 					self.model.train()
 					self.scheduler.step()
@@ -74,7 +74,7 @@ class CaltechTrainer(Trainer):
 			print()
 
 		time_elapsed = time.time() - since
-		print("training completed in: {:.f}m {:.f}s".format(time_elapsed//60, time%60))
+		print("training completed in: {:.f}m {:.f}s".format(time_elapsed//60, time_elapsed%60))
 
 		print("Best accuracy: {:.4f}".format(best_acc))
 
