@@ -1,6 +1,5 @@
 import torch
 from torch import nn
-from torch.nn import functional
 
 class ConvUnit(nn.Module):
 	def __init__(self, in_channels, out_channels):
