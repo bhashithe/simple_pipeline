@@ -8,13 +8,27 @@ class Pipeline():
 		parser = argparse.ArgumentParser(description='PyTorch NN training pipeline')
 		parser.add_argument('parameters', help='Python file to use in the operation mode', type=str)
 		parser.add_argument('--trainer', help='Extended trainer class', type=str)
-		parser.add_argument('--generate', help='Generate a parameters file or a model file by using parameter, or model as the value for this')
+		parser.add_argument('--generate', help='Operation mode: generate a parameters file or a model file using this filename')
 		
 		args = parser.parse_args()
-		return args.parameters,args.trainer, args.generate, args.model
+		return args.parameters,args.trainer, args.generate
 
 	def generate_model(self, filename='Model.py'):
+		cont = """\
+import torch
+
+class Model(torch.nn.Module)
+	def __init__(self):
+		super.__init__(Model, self)
+
+	def forward(self):
 		pass
+
+"""
+		with open(filename+'.py', 'w') as f:
+			f.write(cont)
+		
+		return True
 
 	def generate_parameters(self, filename='parameters.py'):
 		"""
@@ -71,7 +85,7 @@ if __name__ == '__main__':
 
 def main():
 	p = Pipeline()
-	parameters, trainer, generate, model = p.arguments()
+	parameters, trainer, generate = p.arguments()
 
 	if generate == 'parameters':
 		p.generate_parameters(parameters)
